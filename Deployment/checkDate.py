@@ -1,13 +1,11 @@
 import os
-from getpass import getuser
 from datetime import datetime, timedelta
 import subprocess
 
 
 today = datetime.today()
 
-user = getuser() 
-path = "C:\\Users\\%s\\date.txt" % user
+path = "C:\\Users\\date.txt"
 dataFormat = "%Y-%m-%d"
 
 with open(path, 'r') as f:
@@ -15,4 +13,6 @@ with open(path, 'r') as f:
 	loggedDate = datetime.strptime(loggedDate,dataFormat)
 
 if (today-loggedDate).days >= 7: 
-	subprocess.run("C:\\Users\\Nick\\Documents\\PythonWorkspace\\SpareWipe\\UserWipe\\wipeUsers.exe") 
+	print(subprocess.run("C:\\wipeUsers.exe", stdout=subprocess.PIPE).stdout.decode('utf-8')) 
+
+else: print("Less than 7 days")
