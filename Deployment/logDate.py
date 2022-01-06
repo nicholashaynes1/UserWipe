@@ -1,7 +1,7 @@
 import os
 from datetime import date, timedelta
 
-today = date.today() - timedelta(days=7)
+today = date.today()
 
 path = "C:\\Users\\date.txt"
 
