@@ -1,5 +1,4 @@
 import os
-from getpass import getuser
 from datetime import datetime, timedelta
 import subprocess
 
@@ -7,7 +6,7 @@ import subprocess
 today = datetime.today()
 
 user = getuser() 
-path = "C:\\Users\\%s\\date.txt" % user
+path = "C:\\Users\\date.txt"
 dataFormat = "%Y-%m-%d"
 
 with open(path, 'r') as f:
